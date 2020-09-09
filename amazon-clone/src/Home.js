@@ -1,7 +1,7 @@
 // rfce
 import React from 'react';
-import "./Home.css"
-import "./Product"
+import "./Home.css";
+import "./Product";
 import Product from './Product';
 
 function Home() {
@@ -16,17 +16,18 @@ function Home() {
 
                 <div className="home__row">
                     <Product />
+                    <Product />
                 </div>
 
                 <div className="home__row">
-                    {/* Product */}
-                    {/* Product */}
-                    {/* Product */}
+                    <Product /> 
+                    <Product /> 
+                    <Product /> 
                 </div>
 
                 <div className="home__row">
-                    {/* Product */}
-                    {/* Product */}
+                    <Product /> 
+                    <Product /> 
                 </div>
 
             </div>
