@@ -3,8 +3,12 @@ import "./Header.css";
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+
+	const [{ basket }, state, dispatch] = useStateValue(); 
+
 	return (
 		<div className="header">
 			<Link to="/">
@@ -39,7 +43,11 @@ function Header() {
 				<Link to="/checkout">
 					<div className="header__optionBasket">
 						<ShoppingBasketIcon />
-						<span className="header__optionLineTwo header__basketCount">0</span>
+						<span className="header__optionLineTwo header__basketCount">
+						{/* populate our cart dynamically; Utilize chain error handling for error handling optimization so the 
+						console won't freak if it loses track of items or returns undefined for any reason */}
+						{basket?.length}
+						</span>
 					</div>
 				</Link>
 				
