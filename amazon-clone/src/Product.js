@@ -34,7 +34,7 @@ function Product({id, title, image, price, rating}) {
 				<div className="product__rating">
 					{Array(rating)
 						.fill()
-						.map((_, i) => (
+						.map((_, i) => ( // _ in our parameter bc I don't care what the first parameter is
 						  <p>🌟</p>
 						))}					
 				</div>

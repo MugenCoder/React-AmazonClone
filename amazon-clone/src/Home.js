@@ -33,7 +33,8 @@ function Home() {
                 </div>
 
                 <div className="home__row">
-                    <Product title="Funko POP! Rocks: Tupac - Vest with Bandana, Multicolour, 3.75 inches" price={8.78} 
+                    <Product title="Funko POP! Rocks: Tupac - Vest with Bandana, Multicolour, 3.75 inches" 
+                        price={8.78} 
                         image="https://images-na.ssl-images-amazon.com/images/I/61KKLO-HoqL._AC_SL1300_.jpg" 
                         rating={4}
                     /> 
