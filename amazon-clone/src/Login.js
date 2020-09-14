@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { auth } from './firebase'
 
 function Login() {
+		// changes url programatically
+		const history = useHistory();
 		{/* utilize state the useState hook to track input in our input field with an empty str */}
 		const [email, setEmail] = useState('');
 		const [password, setPassword] = useState('');
@@ -11,11 +14,27 @@ function Login() {
 		const signIn = e => {
 			e.preventDefault()
 			// insert fancy firebase shit
+			auth
+				.signInWithEmailAndPassword(email, password)
+				.then(auth => {
+					history.push('/')
+				})
+				.catch(error => alert(error.message))
 		}
 
 		const register = e => {
 			e.preventDefault();
-			// insert fancy firebase shit
+			// create a new acct using preset firebase authentication with email & password
+			auth 
+				.createUserWithEmailAndPassword(email, password)
+				.then((auth) => {
+					// create a new user with email & password through auth var
+					if (auth) {
+						history.push('/')
+					}
+				})
+				// if there's an error for any reason, alert me 
+				.catch(error => alert(error.message))
 		}
 
 	return (

@@ -1,6 +1,7 @@
 // implement an empty arr as our [default] initial cart state 
 export const initialState = {
 	basket: [],
+	user: null
 }
 
 // create a Selector with reduce() to total up basket item prices to return as the Subtotal value
@@ -40,6 +41,12 @@ const reducer = (state, action) => {
 				...state,
 				basket: newBasket
 			}
+
+			case 'SET_USER':
+				return {
+					...state,
+					user: action.user 
+				} 
 
 		default:
 			return state;	
