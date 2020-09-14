@@ -18,23 +18,7 @@ function Checkout() {
 				/>
 
 				<div>
-					<h2 className="checkout__title">Your shopping cart
-					</h2>
-
-					<CheckoutProduct 
-							id='537'
-							title="Funko My Hero Academia Katsuki Bakugo Summer Convention Shared Exclusive POP! Vinyl" 
-							image="https://images-na.ssl-images-amazon.com/images/I/61uPATck7bL._AC_SL1024_.jpg" 
-							price={8.78}
-							rating= {5}
-						/>
-						<CheckoutProduct 
-							id='538'
-							title="Funko POP! Rocks: Tupac - Vest with Bandana, Multicolour, 3.75 inches"
-							image="https://images-na.ssl-images-amazon.com/images/I/61KKLO-HoqL._AC_SL1300_.jpg"  
-							price={75.98}
-							rating= {5}
-						/>
+					<h2 className="checkout__title">Your shopping cart</h2>
 
 					{basket.map(item => (
 						<CheckoutProduct 
