@@ -6,7 +6,7 @@ import { useStateValue } from './StateProvider'
 
 function Checkout() {
 		// render entire cart using useStateValue hook to pull cart items
-		const [{ basket }, dipatch] = useStateValue();
+		const [{ basket, user }, dipatch] = useStateValue();
 
 	return (
 		<div className="checkout">
@@ -18,6 +18,7 @@ function Checkout() {
 				/>
 
 				<div>
+					<h3>{user?.email}</h3>
 					<h2 className="checkout__title">Your shopping cart</h2>
 
 					{basket.map(item => (
