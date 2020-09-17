@@ -5,8 +5,13 @@ import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";	
 import Checkout from "./Checkout.js";
 import Login from "./Login.js";
+import Payment from "./Payment";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from '@stripe/react-stripe-js';
+
+const promise = loadStripe('pk_test_nC9dliwHKOdfTUtVZGu1Ff6100ulsdFoz2');
 
 function App() {
 	const [{}, dispatch] = useStateValue();
@@ -42,6 +47,12 @@ function App() {
 					<Route path="/checkout">
 						<Header /> {/* Was a Persisting Header; outside of Switch Route; now contained outside of login */}
 						<Checkout />
+					</Route>
+					<Route path="/payment">
+						<Header />
+						<Elements stripe={promise}>
+						<Payment />
+						</Elements>
 					</Route>
 					<Route path="/"> {/* Default [Home Page] Route must be at bottom */}
 						<Header /> {/* Was a Persisting Header; outside of Switch Route; now contained outside of login */}

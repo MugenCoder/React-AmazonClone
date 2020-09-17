@@ -11,16 +11,6 @@ const firebaseConfig = {
     measurementId: "G-Q6G3QME3H7"
   };
 
-  const client = require("firebase-tools");
-    client.projects
-      .list()
-      .then(function(data) {
-        console.log(data);
-      })
-      .catch(function(err) {
-        // handle error
-  });
-
   // initalize you firebase app for backend connection
   const firebaseApp = firebase.initializeApp(firebaseConfig);
 
